@@ -25,25 +25,17 @@ let  getRandomInt=(min, max)=>{
 
   const wehicleArr=['car','plane','train','horse','dog team'];
   app.use(function (req, res, next) {
-
-
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    
-    // Pass to next layer of middleware
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+        res.setHeader('Access-Control-Allow-Credentials', true);
+  
     next();
   });
 app.get('/trips',  (req, res)=>{
     
-    let tripsArr=[
-       
-    ];
-    
+    let tripsArr=[];
+    //generate trips list dynamicly
     for(i=0;i<25;i++){
 
         let date = randomDate(new Date(2025, 0, 1), new Date());
